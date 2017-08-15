@@ -24,7 +24,7 @@
   <div id="supportCases"></div>
   <div id="supportCasesLegend"></div>
   <script>
-    d3.json('json/metrics/supportcases.json', function(data) {
+    d3.json('/bvtv/json/metrics/supportcases.json', function(data) {
         for (var i = 0; i < data.length; i++) {
           data[i] = MG.convert.date(data[i], 'date');
         }

@@ -24,7 +24,69 @@
   <div id="supportResponseTime"></div>
   <div id="supportResponseTimeLegend"></div>
   <script>
-    d3.json('json/metrics/supportResponseTime.json', function(data) {
+    var jsonData = [
+      [
+        {
+          "date": "2016-06-01",
+          "value": "4:48:34"
+        },
+        {
+          "date": "2016-07-01",
+          "value": "5:44:43"
+        },
+        {
+          "date": "2016-08-01",
+          "value": "4:52:21"
+        },
+        {
+          "date": "2016-09-01",
+          "value": "6:23:23"
+        },
+        {
+          "date": "2016-10-01",
+          "value": "6:30:00"
+        },
+        {
+          "date": "2016-11-01",
+          "value": "11:56:22"
+        },
+        {
+          "date": "2016-12-01",
+          "value": "2:50:12"
+        },
+        {
+          "date": "2017-01-01",
+          "value": "4:14:44"
+        },
+        {
+          "date": "2017-02-01",
+          "value": "2:33:03"
+        },
+        {
+          "date": "2017-03-01",
+          "value": "4:38:38"
+        },
+        {
+          "date": "2017-04-01",
+          "value": "2:52:05"
+        },
+        {
+          "date": "2017-05-01",
+          "value": "4:26:40"
+        },
+        {
+          "date": "2017-06-01",
+          "value": "3:11:28"
+        },
+        {
+          "date": "2017-06-01",
+          "value": "5:05:42"
+        }
+      ]
+    ];
+
+    d3.json(jsonData, function(data) {
+      data = jsonData;
         for (var i = 0; i < data.length; i++) {
           data[i] = MG.convert.date(data[i], 'date');
           for (var q = 0; q < data[i].length; q++) {
@@ -58,7 +120,7 @@
     progressbar.animate(1, {
         duration: 60000
     }, function() {
-        location = '/completionsperday'
+        location = '/bvtv/completionsperday.html'
     });
   </script>
 </body>

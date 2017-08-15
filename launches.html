@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:svg="http://www.w3.org/2000/svg">
+
+<head>
+  <meta charset="utf-8">
+  <title>Launches</title>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+  <link rel="stylesheet" href="styles/bootstrap/bootstrap.css">
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/progressbar.js"></script>
+  <script src="scripts/bootstrap.js"></script>
+  <style>
+    body {
+      background: #272727;
+      color: #cfcfcf;
+      font: icon;
+      width: 99%;
+    }
+
+    .col-lg-1 {
+      text-align: center;
+      padding: 10px;
+      height: 275px;
+    }
+
+    h5 {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="progressbar" style="margin-bottom:1%;"></div>
+  <h1 style="text-align:center; margin:20px 0">Recent launches</h1>
+  <div id="main">
+  </div>
+  <div>
+    <div class="col-lg-4" style="text-align:center;">
+      <h2>Goal</h2>
+      <h3 style="color:#4caf50;">45 days</h3>
+    </div>
+    <div class="col-lg-4" style="text-align:center;">
+      <h2>Recent average</h2>
+      <h3 id="avgDaysToLaunchHeader"></h3>
+    </div>
+    <div class="col-lg-4" style="text-align:center;">
+      <h2>Historic average</h2>
+      <h3 id="historicAvgDaysToLaunchHeader"></h3>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+  <script type='text/javascript'>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1bvgvyuRlmrLOdmP1-71GkCOL1Lv0lbbz2cNxK9Z_NvE/edit?usp=sharing';
+
+    function init() {
+      Tabletop.init({ key: publicSpreadsheetUrl, callback: showInfo, simpleSheet: false })
+    }
+
+    function showInfo(data, tabletop) {
+      setupLaunches(data.Launches.elements);
+    }
+
+    window.addEventListener('DOMContentLoaded', init)
+  </script>
+  <script>
+    var setupLaunches = function (launches) {
+      launches.sort(function (a, b) {
+        return new Date(b["Date Sales Order Signed"]) - new Date(a["Date Sales Order Signed"]);
+      });
+
+      var diffDaystotal = 0;
+      for (i = 0; i < 36; i++) {
+        var div = document.createElement("div");
+        div.setAttribute('class', 'col-lg-1');
+        div.setAttribute('id', 'launch' + i);
+        document.getElementById("main").appendChild(div);
+
+        div = document.createElement("div");
+        div.setAttribute('id', 'progressBar' + i);
+        document.getElementById('launch' + i).appendChild(div);
+
+        var progressbar = new ProgressBar.SemiCircle('#progressBar' + i, {
+          fill: 'rgba(0, 0, 0, 0.5)',
+          strokeWidth: 2,
+          step: function (state, circle) {
+            var value = Math.round(circle.value() * 100);
+            circle.setText(value + '%');
+
+            circle.path.setAttribute('stroke', "#4caf50");
+
+            if (value < 100) { circle.path.setAttribute('stroke', "yellow"); }
+            if (value === 100) { circle.path.setAttribute('stroke', "#4caf50"); }
+          }
+        });
+
+        var header = document.createElement("h4");
+        header.textContent = launches[i]["Account Name"];
+        document.getElementById('launch' + i).appendChild(header);
+
+        header = document.createElement("h5");
+        header.textContent = launches[i]["Account Owner"];
+        document.getElementById('launch' + i).appendChild(header);
+
+        header = document.createElement("h5");
+        header.textContent = launches[i]["Date Sales Order Signed"];
+        document.getElementById('launch' + i).appendChild(header);
+
+        var oneDay = 24 * 60 * 60 * 1000;
+        var firstDate = new Date();
+        var secondDate = new Date(launches[i]["Date Sales Order Signed"]);
+        var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
+
+        header = document.createElement("h5");
+        header.textContent = diffDays + " days"
+        diffDays > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';
+        document.getElementById('launch' + i).appendChild(header);
+
+        diffDaystotal = diffDaystotal + diffDays;
+        progressbar.animate(launches[i]["Launch Perecentage Complete"] * .01);
+      }
+
+      var avgDaysToLaunch = Math.round(diffDaystotal / 36);
+      header = document.getElementById("avgDaysToLaunchHeader");
+      header.textContent = avgDaysToLaunch + " days";
+      avgDaysToLaunch > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';
+
+      var historicAvgDaysToLaunch = Math.round(diffDaystotal / launches.length);
+      header = document.getElementById("historicAvgDaysToLaunchHeader");
+      header.textContent = historicAvgDaysToLaunch + " days";
+      historicAvgDaysToLaunch > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';
+    }
+  </script>
+
+  <script>
+    var progressbar = new ProgressBar.Line('#progressbar', {
+      color: '#5b5b5b',
+      trailColor: '#272727',
+      strokeWidth: 0.5,
+      trailWidth: 0.5,
+    });
+    progressbar.animate(1, {
+      duration: 60000
+    }, function () {
+      location = '/siteperformance.html'
+    });
+  </script>
+</body>
+
+</html>

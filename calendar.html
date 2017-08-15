@@ -1,0 +1,104 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Calendar</title>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+  
+  <link rel="stylesheet" href="styles/fullcalendar/fullcalendar.min.css">
+  <link rel="stylesheet" href="styles/fullcalendar/fullcalendar.print.min.css" media="print">
+  <link rel="stylesheet" href="styles/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="styles/bootstrap/bootstrap-theme.css">  
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/bootstrap.js"></script>
+  <script src="scripts/moment.js"></script>
+  <script src="scripts/fullcalendar.js"></script>
+  <script src="scripts/gcal.js"></script>
+  <script src="scripts/locale-all.js"></script>
+  <style>
+    body {
+      width: 98%;
+      margin-left: 15px;
+      margin-top: 10px;
+      background:#272727;
+      color: #cfcfcf
+    }
+    .col-lg-3 {
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 14px;
+    }
+    .fc-view-container{
+      font-size: 10px;
+    }
+    .fc-toolbar.fc-header-toolbar {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class='calendarOne'></div>    
+    </div>
+    <div class="col-lg-3">
+      <div class='calendarTwo'></div>    
+    </div>
+    <div class="col-lg-3">
+      <div class='calendarThree'></div>    
+    </div>
+    <div class="col-lg-3">
+      <div class='calendarFour'></div>    
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class='calendarFive'></div>    
+    </div>
+    <div class="col-lg-3">
+      <div class='calendarSix'></div>    
+    </div>
+    <div class="col-lg-3">
+      <div class='calendarSeven'></div>    
+    </div>
+    <div class="col-lg-3">
+      <div class='calendarEight'></div>    
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3" style="padding-bottom:0;">
+      <div class='calendarNine'></div>    
+    </div>
+    <div class="col-lg-3" style="padding-bottom:0;">
+      <div class='calendarTen'></div>    
+    </div>
+    <div class="col-lg-3" style="padding-bottom:0;">
+      <div class='calendarEleven'></div>    
+    </div>
+    <div class="col-lg-3" style="padding-bottom:0;">
+      <div class='calendarTwelve'></div>    
+    </div>
+  </div>
+  <script src="scripts/fullcalendar-config.js"></script>
+  <script>
+    // reload page at 5am everyday
+    var now = new Date();
+    var millisTill5 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 5, 0, 0, 0) - now;
+    if (millisTill5 < 0) {
+        millisTill5 += 86400000; // it's after 5am, try 5am tomorrow.
+    }
+    setTimeout(function(){location.reload();}, millisTill5);
+    var progressbar = new ProgressBar.Line('#progressbar', {
+      color: '#5b5b5b',
+      trailColor: '#272727',
+      strokeWidth: 0.1,
+      trailWidth: 0.1,
+    });
+  </script>
+</body>
+</html>

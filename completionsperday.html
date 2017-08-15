@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+  <meta charset="utf-8">
+  <title>Metrics POC</title>
+  
+  <link rel="stylesheet" href="styles/metricsgraphics/metricsgraphics.css">
+  <link rel="stylesheet" href="styles/metricsgraphics/highlightjs-default.css">
+  <link rel="stylesheet" href="styles/metricsgraphics/metricsgraphics-demo-dark.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/d3.v4.js"></script>
+  <script src="scripts/metricsgraphics.js"></script>
+  <script src="scripts/progressbar.js"></script>
+</head>
+
+<body style="font:icon;">
+  <div id="progressbar" style="margin-bottom:1%;"></div>  
+  <div id="completionsPerDay"></div>
+  <div id="completionsPerDayLegend"></div>
+  <script>
+    d3.json('json/metrics/completionsPerDay.json', function(data) {
+        for (var i = 0; i < data.length; i++) {
+          data[i] = MG.convert.date(data[i], 'date');
+        }
+        MG.data_graphic({
+          title: "Completions per day",
+          data: data,
+          full_width: true,
+          height: 1000,
+          show_tooltips: false,
+          xax_count: 12,
+          yax_count: 20,
+          legend: ['ASAU', 'IMARK', 'Affiliated Distributors', 'Starnet', 'Sphere 1', 'Blue Hawk', 'Embassy', 'IDC', 'Evergreen', 'LionGUARD', 'IBC'],
+          colors: ['red', 'blue', 'green', 'brown', 'grey', 'purple', 'yellow', 'orange', 'white', 'pink', 'aqua', 'chartreuse'],
+          target: '#completionsPerDay',
+          legend_target: '#completionsPerDayLegend',
+          x_accessor: "date",
+          y_accessor: "value",
+      });
+    });
+    var progressbar = new ProgressBar.Line('#progressbar', {
+      color: '#5b5b5b',
+      trailColor: '#272727',
+      strokeWidth: 0.5,
+      trailWidth: 0.5,
+    });
+    progressbar.animate(1, {
+        duration: 60000
+    }, function() {
+        // location = '/enrollmentsperday'
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BVTV</title>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="styles/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="styles/bootstrap/bootstrap-theme.css">
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/bootstrap.js"></script>
+  <script src="scripts/progressbar.js"></script>
+  <style>
+    body {
+      background: #272727;
+      margin: 1%;
+    }
+    .performance-panel {
+      height: 350px;
+      background-repeat: no-repeat;
+      background-size: 95%;
+      background-position: center top;
+    }
+  </style>
+</head>
+<body>
+  <div id="progressbar" style="margin-bottom:1%;"></div>  
+  <div class="row">
+    <div class="col-lg-6 performance-panel" style="background-image: url(images/site-performance/admin-dashboard.png);"></div>
+    <div class="col-lg-6 performance-panel" style="background-image: url(images/site-performance/cet-check.png);"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 performance-panel" style="background-image: url(images/site-performance/login.png);"></div>
+    <div class="col-lg-6 performance-panel" style="background-image: url(images/site-performance/login-au.png);"></div>
+  </div>
+  
+  <script>
+    var progressbar = new ProgressBar.Line('#progressbar', {
+      color: '#5b5b5b',
+      trailColor: '#272727',
+      strokeWidth: 0.5,
+      trailWidth: 0.5,
+    });
+    progressbar.animate(1, {
+      duration: 60000
+    }, function() {
+      location = '/launches'
+    });
+  </script>
+</body>
+
+</html>
+
+<!--
+$('.pd-container-with-sidebar').css('background','#272727');
+$('.pd-container-with-sidebar').css('padding','10px');
+$('.pd-main-chart-title h2').css('color','#cfcfcf');
+$('.pd-js-editCheckButton').remove();
+$('.pd-js-graphType').remove();
+-->

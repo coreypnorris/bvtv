@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:svg="http://www.w3.org/2000/svg">
+
 <head>
   <meta charset="utf-8">
   <title>Metrics POC</title>
-  
+
   <link rel="stylesheet" href="styles/metricsgraphics/metricsgraphics.css">
   <link rel="stylesheet" href="styles/metricsgraphics/highlightjs-default.css">
   <link rel="stylesheet" href="styles/metricsgraphics/metricsgraphics-demo-dark.css">
@@ -20,28 +21,626 @@
 </head>
 
 <body style="font:icon;">
-  <div id="progressbar" style="margin-bottom:1%;"></div>  
+  <div id="progressbar" style="margin-bottom:1%;"></div>
   <div id="completionsPerDay"></div>
   <div id="completionsPerDayLegend"></div>
   <script>
-    d3.json('json/metrics/completionsPerDay.json', function(data) {
-        for (var i = 0; i < data.length; i++) {
-          data[i] = MG.convert.date(data[i], 'date');
+    var jsonData = [
+      [
+        {
+          "date": "2016-07-01",
+          "value": 328
+        },
+        {
+          "date": "2016-08-01",
+          "value": 649
+        },
+        {
+          "date": "2016-09-01",
+          "value": 629
+        },
+        {
+          "date": "2016-10-01",
+          "value": 652
+        },
+        {
+          "date": "2016-11-01",
+          "value": 710
+        },
+        {
+          "date": "2016-12-01",
+          "value": 598
+        },
+        {
+          "date": "2017-01-01",
+          "value": 865
+        },
+        {
+          "date": "2017-02-01",
+          "value": 941
+        },
+        {
+          "date": "2017-03-01",
+          "value": 1173
+        },
+        {
+          "date": "2017-04-01",
+          "value": 1263
+        },
+        {
+          "date": "2017-05-01",
+          "value": 1505
+        },
+        {
+          "date": "2017-06-01",
+          "value": 1204
+        },
+        {
+          "date": "2017-07-01",
+          "value": 593
         }
-        MG.data_graphic({
-          title: "Completions per day",
-          data: data,
-          full_width: true,
-          height: 1000,
-          show_tooltips: false,
-          xax_count: 12,
-          yax_count: 20,
-          legend: ['ASAU', 'IMARK', 'Affiliated Distributors', 'Starnet', 'Sphere 1', 'Blue Hawk', 'Embassy', 'IDC', 'Evergreen', 'LionGUARD', 'IBC'],
-          colors: ['red', 'blue', 'green', 'brown', 'grey', 'purple', 'yellow', 'orange', 'white', 'pink', 'aqua', 'chartreuse'],
-          target: '#completionsPerDay',
-          legend_target: '#completionsPerDayLegend',
-          x_accessor: "date",
-          y_accessor: "value",
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 4693
+        },
+        {
+          "date": "2016-08-01",
+          "value": 10693
+        },
+        {
+          "date": "2016-09-01",
+          "value": 8710
+        },
+        {
+          "date": "2016-10-01",
+          "value": 11531
+        },
+        {
+          "date": "2016-11-01",
+          "value": 13322
+        },
+        {
+          "date": "2016-12-01",
+          "value": 19331
+        },
+        {
+          "date": "2017-01-01",
+          "value": 17754
+        },
+        {
+          "date": "2017-02-01",
+          "value": 12565
+        },
+        {
+          "date": "2017-03-01",
+          "value": 11528
+        },
+        {
+          "date": "2017-04-01",
+          "value": 10286
+        },
+        {
+          "date": "2017-05-01",
+          "value": 13530
+        },
+        {
+          "date": "2017-06-01",
+          "value": 17068
+        },
+        {
+          "date": "2017-07-01",
+          "value": 7548
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 469
+        },
+        {
+          "date": "2016-08-01",
+          "value": 699
+        },
+        {
+          "date": "2016-09-01",
+          "value": 695
+        },
+        {
+          "date": "2016-10-01",
+          "value": 1019
+        },
+        {
+          "date": "2016-11-01",
+          "value": 955
+        },
+        {
+          "date": "2016-12-01",
+          "value": 1101
+        },
+        {
+          "date": "2017-01-01",
+          "value": 1294
+        },
+        {
+          "date": "2017-02-01",
+          "value": 2029
+        },
+        {
+          "date": "2017-03-01",
+          "value": 2213
+        },
+        {
+          "date": "2017-04-01",
+          "value": 3353
+        },
+        {
+          "date": "2017-05-01",
+          "value": 7020
+        },
+        {
+          "date": "2017-06-01",
+          "value": 6286
+        },
+        {
+          "date": "2017-07-01",
+          "value": 2221
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 15
+        },
+        {
+          "date": "2016-08-01",
+          "value": 26
+        },
+        {
+          "date": "2016-09-01",
+          "value": 11
+        },
+        {
+          "date": "2016-10-01",
+          "value": 27
+        },
+        {
+          "date": "2016-11-01",
+          "value": 51
+        },
+        {
+          "date": "2016-12-01",
+          "value": 59
+        },
+        {
+          "date": "2017-01-01",
+          "value": 24
+        },
+        {
+          "date": "2017-02-01",
+          "value": 4
+        },
+        {
+          "date": "2017-03-01",
+          "value": 27
+        },
+        {
+          "date": "2017-04-01",
+          "value": 30
+        },
+        {
+          "date": "2017-05-01",
+          "value": 34
+        },
+        {
+          "date": "2017-06-01",
+          "value": 30
+        },
+        {
+          "date": "2017-07-01",
+          "value": 5
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 1557
+        },
+        {
+          "date": "2016-08-01",
+          "value": 7349
+        },
+        {
+          "date": "2016-09-01",
+          "value": 4600
+        },
+        {
+          "date": "2016-10-01",
+          "value": 5193
+        },
+        {
+          "date": "2016-11-01",
+          "value": 8058
+        },
+        {
+          "date": "2016-12-01",
+          "value": 10939
+        },
+        {
+          "date": "2017-01-01",
+          "value": 9451
+        },
+        {
+          "date": "2017-02-01",
+          "value": 6887
+        },
+        {
+          "date": "2017-03-01",
+          "value": 7016
+        },
+        {
+          "date": "2017-04-01",
+          "value": 5088
+        },
+        {
+          "date": "2017-05-01",
+          "value": 8760
+        },
+        {
+          "date": "2017-06-01",
+          "value": 7415
+        },
+        {
+          "date": "2017-07-01",
+          "value": 2335
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 895
+        },
+        {
+          "date": "2016-08-01",
+          "value": 2823
+        },
+        {
+          "date": "2016-09-01",
+          "value": 3729
+        },
+        {
+          "date": "2016-10-01",
+          "value": 3016
+        },
+        {
+          "date": "2016-11-01",
+          "value": 3636
+        },
+        {
+          "date": "2016-12-01",
+          "value": 3171
+        },
+        {
+          "date": "2017-01-01",
+          "value": 2945
+        },
+        {
+          "date": "2017-02-01",
+          "value": 4063
+        },
+        {
+          "date": "2017-03-01",
+          "value": 5692
+        },
+        {
+          "date": "2017-04-01",
+          "value": 4066
+        },
+        {
+          "date": "2017-05-01",
+          "value": 2714
+        },
+        {
+          "date": "2017-06-01",
+          "value": 2669
+        },
+        {
+          "date": "2017-07-01",
+          "value": 1257
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 59
+        },
+        {
+          "date": "2016-08-01",
+          "value": 10
+        },
+        {
+          "date": "2016-09-01",
+          "value": 46
+        },
+        {
+          "date": "2016-10-01",
+          "value": 47
+        },
+        {
+          "date": "2016-11-01",
+          "value": 45
+        },
+        {
+          "date": "2016-12-01",
+          "value": 112
+        },
+        {
+          "date": "2017-01-01",
+          "value": 80
+        },
+        {
+          "date": "2017-02-01",
+          "value": 135
+        },
+        {
+          "date": "2017-03-01",
+          "value": 257
+        },
+        {
+          "date": "2017-04-01",
+          "value": 394
+        },
+        {
+          "date": "2017-05-01",
+          "value": 523
+        },
+        {
+          "date": "2017-06-01",
+          "value": 456
+        },
+        {
+          "date": "2017-07-01",
+          "value": 154
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 115
+        },
+        {
+          "date": "2016-08-01",
+          "value": 119
+        },
+        {
+          "date": "2016-09-01",
+          "value": 263
+        },
+        {
+          "date": "2016-10-01",
+          "value": 137
+        },
+        {
+          "date": "2016-11-01",
+          "value": 72
+        },
+        {
+          "date": "2016-12-01",
+          "value": 127
+        },
+        {
+          "date": "2017-01-01",
+          "value": 171
+        },
+        {
+          "date": "2017-02-01",
+          "value": 72
+        },
+        {
+          "date": "2017-03-01",
+          "value": 135
+        },
+        {
+          "date": "2017-04-01",
+          "value": 92
+        },
+        {
+          "date": "2017-05-01",
+          "value": 147
+        },
+        {
+          "date": "2017-06-01",
+          "value": 123
+        },
+        {
+          "date": "2017-07-01",
+          "value": 150
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 721
+        },
+        {
+          "date": "2016-08-01",
+          "value": 3499
+        },
+        {
+          "date": "2016-09-01",
+          "value": 2567
+        },
+        {
+          "date": "2016-10-01",
+          "value": 2617
+        },
+        {
+          "date": "2016-11-01",
+          "value": 4257
+        },
+        {
+          "date": "2016-12-01",
+          "value": 3439
+        },
+        {
+          "date": "2017-01-01",
+          "value": 2119
+        },
+        {
+          "date": "2017-02-01",
+          "value": 2394
+        },
+        {
+          "date": "2017-03-01",
+          "value": 3864
+        },
+        {
+          "date": "2017-04-01",
+          "value": 3051
+        },
+        {
+          "date": "2017-05-01",
+          "value": 2144
+        },
+        {
+          "date": "2017-06-01",
+          "value": 2907
+        },
+        {
+          "date": "2017-07-01",
+          "value": 1088
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 14
+        },
+        {
+          "date": "2016-08-01",
+          "value": 59
+        },
+        {
+          "date": "2016-09-01",
+          "value": 79
+        },
+        {
+          "date": "2016-10-01",
+          "value": 51
+        },
+        {
+          "date": "2016-11-01",
+          "value": 75
+        },
+        {
+          "date": "2016-12-01",
+          "value": 148
+        },
+        {
+          "date": "2017-01-01",
+          "value": 339
+        },
+        {
+          "date": "2017-02-01",
+          "value": 266
+        },
+        {
+          "date": "2017-03-01",
+          "value": 674
+        },
+        {
+          "date": "2017-04-01",
+          "value": 112
+        },
+        {
+          "date": "2017-05-01",
+          "value": 39
+        },
+        {
+          "date": "2017-06-01",
+          "value": 5
+        },
+        {
+          "date": "2017-07-01",
+          "value": 25
+        }
+      ],
+      [
+        {
+          "date": "2016-07-01",
+          "value": 30
+        },
+        {
+          "date": "2016-08-01",
+          "value": 230
+        },
+        {
+          "date": "2016-09-01",
+          "value": 161
+        },
+        {
+          "date": "2016-10-01",
+          "value": 125
+        },
+        {
+          "date": "2016-11-01",
+          "value": 205
+        },
+        {
+          "date": "2016-12-01",
+          "value": 150
+        },
+        {
+          "date": "2017-01-01",
+          "value": 108
+        },
+        {
+          "date": "2017-02-01",
+          "value": 58
+        },
+        {
+          "date": "2017-03-01",
+          "value": 70
+        },
+        {
+          "date": "2017-04-01",
+          "value": 56
+        },
+        {
+          "date": "2017-05-01",
+          "value": 57
+        },
+        {
+          "date": "2017-06-01",
+          "value": 127
+        },
+        {
+          "date": "2017-07-01",
+          "value": 29
+        }
+      ]
+    ];
+
+    d3.json(jsonData, function (data) {
+      data = jsonData;
+      for (var i = 0; i < data.length; i++) {
+        data[i] = MG.convert.date(data[i], 'date');
+      }
+      MG.data_graphic({
+        title: "Completions per day",
+        data: data,
+        full_width: true,
+        height: 1000,
+        show_tooltips: false,
+        xax_count: 12,
+        yax_count: 20,
+        legend: ['ASAU', 'IMARK', 'Affiliated Distributors', 'Starnet', 'Sphere 1', 'Blue Hawk', 'Embassy', 'IDC', 'Evergreen', 'LionGUARD', 'IBC'],
+        colors: ['red', 'blue', 'green', 'brown', 'grey', 'purple', 'yellow', 'orange', 'white', 'pink', 'aqua', 'chartreuse'],
+        target: '#completionsPerDay',
+        legend_target: '#completionsPerDayLegend',
+        x_accessor: "date",
+        y_accessor: "value",
       });
     });
     var progressbar = new ProgressBar.Line('#progressbar', {
@@ -51,10 +650,11 @@
       trailWidth: 0.5,
     });
     progressbar.animate(1, {
-        duration: 60000
-    }, function() {
-        location = '/enrollmentsperday'
+      duration: 60000
+    }, function () {
+      location = 'bvtv/enrollmentsperday.html'
     });
   </script>
 </body>
+
 </html>

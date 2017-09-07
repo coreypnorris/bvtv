@@ -622,7 +622,7 @@
       ]
     ];
 
-    d3.json(, function (data) {
+    d3.json(jsonData, function (data) {
       data = jsonData;
       for (var i = 0; i < data.length; i++) {
         data[i] = MG.convert.date(data[i], 'date');

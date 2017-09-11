@@ -110,6 +110,8 @@
         header.textContent = launches[i]["Date Sales Order Signed"];
         document.getElementById('launch' + i).appendChild(header);
 
+        if (launches[i]["Date Sales Order Signed"] === "") { continue; }
+
         var oneDay = 24 * 60 * 60 * 1000;
         var firstDate = new Date();
         var secondDate = new Date(launches[i]["Date Sales Order Signed"]);
@@ -119,11 +121,11 @@
         header.textContent = diffDays + " days"
         diffDays > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';
         document.getElementById('launch' + i).appendChild(header);
-
+        
         diffDaystotal = diffDaystotal + diffDays;
         progressbar.animate(launches[i]["Launch Perecentage Complete"] * .01);
       }
-
+      
       var avgDaysToLaunch = Math.round(diffDaystotal / 36);
       header = document.getElementById("avgDaysToLaunchHeader");
       header.textContent = avgDaysToLaunch + " days";

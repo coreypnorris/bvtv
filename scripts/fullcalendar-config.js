@@ -102,6 +102,12 @@ var calendarEightEvents = [
 
 var calendarNineEvents = [
   {
+    "start": "9/6/2017",
+    "end": "9/9/2017",
+    "title": "AD PHCP Canada",
+    "color": 'blue',
+  },
+  {
     "start": "9/11/2017",
     "end": "9/15/2017",
     "title": "AD PHCP NAM",
@@ -135,8 +141,14 @@ var calendarTenEvents = [
     "color": 'green',
   },
   {
-    "start": "10/11/2017",
-    "end": "10/14/2017",
+    "start": "10/4/2017",
+    "end": "10/7/2017",
+    "title": "NCBA Purchasing Cooperatives Conference",
+    "color": 'green',
+  },
+  {
+    "start": "10/9/2017",
+    "end": "10/12/2017",
     "title": "ASA",
     "color": 'green',
   },
@@ -144,6 +156,12 @@ var calendarTenEvents = [
     "start": "10/15/2017",
     "end": "10/18/2017",
     "title": "IMARK Annual",
+    "color": 'green',
+  },
+  {
+    "start": "10/23/2017",
+    "end": "10/26/2017",
+    "title": "BLUE HAWK Golf",
     "color": 'green',
   },
 ];
@@ -158,6 +176,12 @@ var calendarElevenEvents = [
 ];
 
 var calendarTwelveEvents = [
+  {
+    "start": "12/2/2017",
+    "end": "12/6/2017",
+    "title": "HVAC",
+    "color": 'purple',
+  },
   {
     "start": "12/5/2017",
     "end": "12/8/2017",
@@ -174,7 +198,7 @@ $('.calendarOne').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -187,7 +211,7 @@ $('.calendarTwo').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -200,7 +224,7 @@ $('.calendarThree').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -213,7 +237,7 @@ $('.calendarFour').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -226,7 +250,7 @@ $('.calendarFive').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -239,7 +263,7 @@ $('.calendarSix').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -252,7 +276,7 @@ $('.calendarSeven').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -265,7 +289,7 @@ $('.calendarEight').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -278,7 +302,7 @@ $('.calendarNine').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -291,7 +315,7 @@ $('.calendarTen').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -304,7 +328,7 @@ $('.calendarEleven').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -317,7 +341,7 @@ $('.calendarTwelve').fullCalendar({
     center: '',
     right: ''
   },
-  height: 415,
+  height: 450,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });

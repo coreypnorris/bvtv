@@ -39,7 +39,7 @@
   <h1 style="text-align:center; margin:20px 0">Recent launches</h1>
   <div id="main">
   </div>
-  <div>
+  <div style="position: absolute;bottom: 2%;left: 35%;">
     <div class="col-lg-4" style="text-align:center;">
       <h2>Goal</h2>
       <h3 style="color:#4caf50;">45 days</h3>
@@ -74,7 +74,7 @@
       });
 
       var diffDaystotal = 0;
-      for (i = 0; i < 36; i++) {
+      for (i = 0; i < launches.length; i++) {
         var div = document.createElement("div");
         div.setAttribute('class', 'col-lg-1');
         div.setAttribute('id', 'launch' + i);
@@ -148,7 +148,7 @@
     progressbar.animate(1, {
       duration: 60000
     }, function () {
-      location = '/bvtv/siteperformance.html'
+      location = '/bvtv/calendar.html'
     });
   </script>
 </body>

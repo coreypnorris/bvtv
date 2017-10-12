@@ -198,7 +198,7 @@ $('.calendarOne').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -211,7 +211,7 @@ $('.calendarTwo').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -224,7 +224,7 @@ $('.calendarThree').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -237,7 +237,7 @@ $('.calendarFour').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -250,7 +250,7 @@ $('.calendarFive').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -263,7 +263,7 @@ $('.calendarSix').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -276,7 +276,7 @@ $('.calendarSeven').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -289,7 +289,7 @@ $('.calendarEight').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -302,7 +302,7 @@ $('.calendarNine').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -315,7 +315,7 @@ $('.calendarTen').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -328,7 +328,7 @@ $('.calendarEleven').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -341,7 +341,7 @@ $('.calendarTwelve').fullCalendar({
     center: '',
     right: ''
   },
-  height: 450,
+  height: 400,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });

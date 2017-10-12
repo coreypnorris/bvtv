@@ -175,6 +175,21 @@ var calendarElevenEvents = [
   },
 ];
 
+var calendarTwelveEvents = [
+  {
+    "start": "12/2/2017",
+    "end": "12/6/2017",
+    "title": "HVAC",
+    "color": 'purple',
+  },
+  {
+    "start": "12/5/2017",
+    "end": "12/8/2017",
+    "title": "Equity Plumbing",
+    "color": 'purple',
+  },
+];
+
 $('.calendarOne').fullCalendar({
   defaultDate: "1/1/" + moment().year(),
   events: calendarOneEvents,

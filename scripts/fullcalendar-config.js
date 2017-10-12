@@ -175,21 +175,6 @@ var calendarElevenEvents = [
   },
 ];
 
-var calendarTwelveEvents = [
-  {
-    "start": "12/2/2017",
-    "end": "12/6/2017",
-    "title": "HVAC",
-    "color": 'purple',
-  },
-  {
-    "start": "12/5/2017",
-    "end": "12/8/2017",
-    "title": "Equity Plumbing",
-    "color": 'purple',
-  },
-];
-
 $('.calendarOne').fullCalendar({
   defaultDate: "1/1/" + moment().year(),
   events: calendarOneEvents,
@@ -198,7 +183,7 @@ $('.calendarOne').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -211,7 +196,7 @@ $('.calendarTwo').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -224,7 +209,7 @@ $('.calendarThree').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -237,7 +222,7 @@ $('.calendarFour').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -250,7 +235,7 @@ $('.calendarFive').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -263,7 +248,7 @@ $('.calendarSix').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -276,7 +261,7 @@ $('.calendarSeven').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -289,7 +274,7 @@ $('.calendarEight').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -302,7 +287,7 @@ $('.calendarNine').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -315,7 +300,7 @@ $('.calendarTen').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -328,7 +313,7 @@ $('.calendarEleven').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });
@@ -341,7 +326,7 @@ $('.calendarTwelve').fullCalendar({
     center: '',
     right: ''
   },
-  height: 400,
+  height: 380,
   titleFormat: 'MMMM',
   displayEventTime: false,
 });

@@ -126,7 +126,7 @@
         progressbar.animate(launches[i]["Launch Perecentage Complete"] * .01);
       }
       
-      var avgDaysToLaunch = Math.round(diffDaystotal / 36);
+      var avgDaysToLaunch = Math.round(diffDaystotal / launches.length);
       header = document.getElementById("avgDaysToLaunchHeader");
       header.textContent = avgDaysToLaunch + " days";
       avgDaysToLaunch > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';

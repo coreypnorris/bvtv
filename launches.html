@@ -39,26 +39,27 @@
   <h1 style="text-align:center; margin:20px 0">Recent launches</h1>
   <div id="main">
   </div>
-  <div style="position: absolute;bottom: 2%;left: 35%;">
-    <div class="col-lg-4" style="text-align:center;">
+  <div style="position: absolute;bottom: 2%;left: 40%;">
+    <div class="col-lg-6" style="text-align:center;">
       <h2>Goal</h2>
       <h3 style="color:#4caf50;">45 days</h3>
     </div>
-    <div class="col-lg-4" style="text-align:center;">
-      <h2>Recent average</h2>
+    <div class="col-lg-6" style="text-align:center;">
+      <h2>Average</h2>
       <h3 id="avgDaysToLaunchHeader"></h3>
-    </div>
-    <div class="col-lg-4" style="text-align:center;">
-      <h2>Historic average</h2>
-      <h3 id="historicAvgDaysToLaunchHeader"></h3>
     </div>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
   <script type='text/javascript'>
-    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1bvgvyuRlmrLOdmP1-71GkCOL1Lv0lbbz2cNxK9Z_NvE/edit?usp=sharing';
+    var publicSpreadsheetUrl =
+      'https://docs.google.com/spreadsheets/d/1bvgvyuRlmrLOdmP1-71GkCOL1Lv0lbbz2cNxK9Z_NvE/edit?usp=sharing';
 
     function init() {
-      Tabletop.init({ key: publicSpreadsheetUrl, callback: showInfo, simpleSheet: false })
+      Tabletop.init({
+        key: publicSpreadsheetUrl,
+        callback: showInfo,
+        simpleSheet: false
+      })
     }
 
     function showInfo(data, tabletop) {
@@ -93,8 +94,12 @@
 
             circle.path.setAttribute('stroke', "#4caf50");
 
-            if (value < 100) { circle.path.setAttribute('stroke', "yellow"); }
-            if (value === 100) { circle.path.setAttribute('stroke', "#4caf50"); }
+            if (value < 100) {
+              circle.path.setAttribute('stroke', "yellow");
+            }
+            if (value === 100) {
+              circle.path.setAttribute('stroke', "#4caf50");
+            }
           }
         });
 
@@ -110,7 +115,9 @@
         header.textContent = launches[i]["Date Sales Order Signed"];
         document.getElementById('launch' + i).appendChild(header);
 
-        if (launches[i]["Date Sales Order Signed"] === "") { continue; }
+        if (launches[i]["Date Sales Order Signed"] === "") {
+          continue;
+        }
 
         var oneDay = 24 * 60 * 60 * 1000;
         var firstDate = new Date();
@@ -121,20 +128,15 @@
         header.textContent = diffDays + " days"
         diffDays > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';
         document.getElementById('launch' + i).appendChild(header);
-        
+
         diffDaystotal = diffDaystotal + diffDays;
         progressbar.animate(launches[i]["Launch Perecentage Complete"] * .01);
       }
-      
+
       var avgDaysToLaunch = Math.round(diffDaystotal / launches.length);
       header = document.getElementById("avgDaysToLaunchHeader");
       header.textContent = avgDaysToLaunch + " days";
       avgDaysToLaunch > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';
-
-      var historicAvgDaysToLaunch = Math.round(diffDaystotal / launches.length);
-      header = document.getElementById("historicAvgDaysToLaunchHeader");
-      header.textContent = historicAvgDaysToLaunch + " days";
-      historicAvgDaysToLaunch > 45 ? header.style.color = 'red' : header.style.color = '#4caf50';
     }
   </script>
 

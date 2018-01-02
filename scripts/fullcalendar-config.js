@@ -1,194 +1,106 @@
-var calendarOneEvents = [
-  {
-    "start": "1/11/2017",
-    "end": "1/14/2017",
-    "title": "BLUE HAWK winter",
-    "color": 'blue',
-  },
-  {
-    "start": "1/17/2017",
-    "end": "1/20/2017",
-    "title": "World of Concrete",
-    "color": 'blue',
-  },
-];
+var calendarOneEvents = [{
+  "start": "1/8/2018",
+  "end": "1/11/2018",
+  "title": "BLUE HAWK winter",
+  "color": 'blue',
+}, {
+  "start": "1/23/2018",
+  "end": "1/27/2018",
+  "title": "World of Concrete",
+  "color": 'blue',
+}, {
+  "start": "1/21/2018",
+  "end": "1/24/2018",
+  "title": "AHR",
+  "color": 'blue',
+}, {
+  "start": "1/31/2018",
+  "end": "2/3/2018",
+  "title": "NEMRA",
+  "color": 'blue',
+}];
 
-var calendarTwoEvents = [
-  {
-    "start": "2/13/2017",
-    "end": "2/16/2017",
-    "title": "NEMEON",
-    "color": 'green',
-  },
-];
+var calendarTwoEvents = [{
+  "start": "1/31/2018",
+  "end": "2/3/2018",
+  "title": "NEMRA",
+  "color": 'purple',
+}, {
+  "start": "2/19/2018",
+  "end": "2/22/2018",
+  "title": "NEMEON",
+  "color": 'purple',
+}];
 
-var calendarThreeEvents = [
-  {
-    "start": "3/20/2017",
-    "end": "3/24/2017",
-    "title": "Embassy Group Spring Conference",
-    "color": 'red',
-  },
-  {
-    "start": "3/28/2017",
-    "end": "3/31/2017",
-    "title": "IMARK Showcase",
-    "color": 'red',
-  },
-];
+var calendarThreeEvents = [{
+  "start": "3/20/2018",
+  "end": "3/23/2018",
+  "title": "IMARK Showcase",
+  "color": 'green',
+}];
 
-var calendarFourEvents = [
-  {
-    "start": "4/18/2017",
-    "end": "4/22/2017",
-    "title": "Evergreen",
-    "color": 'purple',
-  },
-  {
-    "start": "4/19/2017",
-    "end": "4/23/2017",
-    "title": "BLUE HAWK",
-    "color": 'purple',
-  },
-];
+var calendarFourEvents = [{
+  "start": "4/10/2018",
+  "end": "4/12/2018",
+  "title": "ASA BOT Meeting",
+  "color": 'red',
+}, {
+  "start": "4/17/2018",
+  "end": "4/20/2018",
+  "title": "IDC-USA",
+  "color": 'red',
+}, {
+  "start": "4/17/2018",
+  "end": "4/20/2018",
+  "title": "Evergreen",
+  "color": 'red',
+}, {
+  "start": "4/19/2018",
+  "end": "4/23/2018",
+  "title": "Starnet",
+  "color": 'red',
+}];
 
-var calendarFiveEvents = [
-  {
-    "start": "5/1/2017",
-    "end": "5/4/2017",
-    "title": "NAED National Conf",
-    "color": 'blue',
-  },
-  {
-    "start": "5/9/2017",
-    "end": "5/12/2017",
-    "title": "Sphere 1",
-    "color": 'blue',
-  },
-  {
-    "start": "5/15/2017",
-    "end": "5/17/2017",
-    "title": "IDC Product Forum",
-    "color": 'blue',
-  },
-];
+var calendarFiveEvents = [{
+  "start": "5/2/2018",
+  "end": "5/6/2018",
+  "title": "BLUE HAWK",
+  "color": 'blue',
+}, {
+  "start": "5/15/2018",
+  "end": "5/18/2018",
+  "title": "IWDC Annual",
+  "color": 'blue',
+}, {
+  "start": "5/14/2018",
+  "end": "5/18/2018",
+  "title": "Sphere 1",
+  "color": 'blue',
+}, {
+  "start": "5/22/2018",
+  "end": "5/25/2018",
+  "title": "AD HR Summit",
+  "color": 'blue',
+}, {
+  "start": "5/29/2018",
+  "end": "6/1/2018",
+  "title": "IDI",
+  "color": 'blue',
+}];
 
-var calendarSixEvents = [
-  {
-    "start": "6/6/2017",
-    "end": "6/9/2017",
-    "title": "Octo",
-    "color": 'green',
-  },
-  {
-    "start": "6/15/2017",
-    "end": "6/17/2017",
-    "title": "AD HR Summit",
-    "color": 'green',
-  },
-  {
-    "start": "6/20/2017",
-    "end": "6/23/2017",
-    "title": "LEAP",
-    "color": 'green',
-  },
-];
+var calendarSixEvents = [];
 
-var calendarSevenEvents = [
-];
+var calendarSevenEvents = [];
 
-var calendarEightEvents = [
-];
+var calendarEightEvents = [];
 
-var calendarNineEvents = [
-  {
-    "start": "9/6/2017",
-    "end": "9/9/2017",
-    "title": "AD PHCP Canada",
-    "color": 'blue',
-  },
-  {
-    "start": "9/11/2017",
-    "end": "9/15/2017",
-    "title": "AD PHCP NAM",
-    "color": 'blue',
-  },
-  {
-    "start": "9/17/2017",
-    "end": "9/20/2017",
-    "title": "HARDI Sales and Marketing",
-    "color": 'blue',
-  },
-  {
-    "start": "9/17/2017",
-    "end": "9/21/2017",
-    "title": "AD ISD NAM",
-    "color": 'blue',
-  },
-  {
-    "start": "9/25/2017",
-    "end": "9/28/2017",
-    "title": "AD ESD NAM",
-    "color": 'blue',
-  },
-];
+var calendarNineEvents = [];
 
-var calendarTenEvents = [
-  {
-    "start": "10/1/2017",
-    "end": "10/4/2017",
-    "title": "IBC National Meeting",
-    "color": 'green',
-  },
-  {
-    "start": "10/4/2017",
-    "end": "10/7/2017",
-    "title": "NCBA Purchasing Cooperatives Conference",
-    "color": 'green',
-  },
-  {
-    "start": "10/9/2017",
-    "end": "10/12/2017",
-    "title": "ASA",
-    "color": 'green',
-  },
-  {
-    "start": "10/15/2017",
-    "end": "10/18/2017",
-    "title": "IMARK Annual",
-    "color": 'green',
-  },
-  {
-    "start": "10/23/2017",
-    "end": "10/26/2017",
-    "title": "BLUE HAWK Golf",
-    "color": 'green',
-  },
-];
+var calendarTenEvents = [];
 
-var calendarElevenEvents = [
-  {
-    "start": "11/12/2017",
-    "end": "11/15/2017",
-    "title": "STAFDA",
-    "color": 'red',
-  },
-];
+var calendarElevenEvents = [];
 
-var calendarTwelveEvents = [
-  {
-    "start": "12/2/2017",
-    "end": "12/6/2017",
-    "title": "HVAC",
-    "color": 'purple',
-  },
-  {
-    "start": "12/5/2017",
-    "end": "12/8/2017",
-    "title": "Equity Plumbing",
-    "color": 'purple',
-  },
-];
+var calendarTwelveEvents = [];
 
 $('.calendarOne').fullCalendar({
   defaultDate: "1/1/" + moment().year(),

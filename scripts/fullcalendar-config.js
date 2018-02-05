@@ -33,6 +33,11 @@ var calendarTwoEvents = [{
 }];
 
 var calendarThreeEvents = [{
+  "start": "3/13/2018",
+  "end": "3/17/2018",
+  "title": "Embassy Group Spring Conference",
+  "color": 'green',
+},{
   "start": "3/20/2018",
   "end": "3/23/2018",
   "title": "IMARK Showcase",
